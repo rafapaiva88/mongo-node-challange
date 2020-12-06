@@ -1,8 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require('../database');
 
-const { Schema } = mongoose;
-
-const classSchema = new Schema({
+const classSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -11,6 +9,43 @@ const classSchema = new Schema({
     type: String,
     required: true,
   },
+  video: {
+    type: String,
+    required: true,
+  },
+  comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Comment',
+    },
+  ],
+  data_init: {
+    type: Date,
+    required: true,
+  },
+  data_end: {
+    type: Date,
+    required: true,
+  },
+  created_at: {
+    type: Date,
+    default: Date.now,
+  },
+  updated_at: {
+    type: Date,
+    default: Date.now,
+  },
+  total_comments: {
+    type: Number,
+  },
+  last_comment: {
+    type: String,
+  },
+  last_comment_date: {
+    type: Date,
+  },
 });
 
-module.exports = mongoose.model('ClassesModel', classSchema);
+const Class = mongoose.model('Class', classSchema);
+
+module.exports = Class;
