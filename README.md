@@ -13,7 +13,7 @@ Aplicação para criar aulas e comentários seguindo endpoints estipulados, util
 
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://expressjs.com/pt-br/)
-* [Nodemon]https://nodemon.io/
+* [Nodemon](https://nodemon.io/)
 * [Mongoose](https://mongoosejs.com/)
 * [Jest & Supertest](https://jestjs.io/)
 
